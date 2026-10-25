@@ -1,0 +1,80 @@
+version: 1
+policies:
+  - id: pol-global-fallback
+    name: Global IP Fallback Limiter
+    version: 1
+    tenant: global
+    scope: ip
+    algorithm: token_bucket
+    limit: 1000
+    window: 1m
+    burst: 1500
+    priority: 10
+    enabled: true
+    match:
+      route_pattern: "/*"
+  - id: pol-acme-users-gcra
+    name: Acme User Profile GCRA Limiter
+    version: 1
+    tenant: acme
+    scope: client
+    algorithm: gcra
+    limit: 50
+    window: 10s
+    burst: 50
+    priority: 50
+    enabled: true
+    match:
+      route_pattern: "/api/v1/users/*"
+  - id: pol-acme-search-sliding
+    name: Acme Search Query Sliding Counter
+    version: 1
+    tenant: acme
+    scope: user
+    algorithm: sliding_window_counter
+    limit: 30
+    window: 10s
+    burst: 30
+    priority: 60
+    enabled: true
+    match:
+      route_pattern: "/api/v1/search/*"
+  - id: pol-globex-checkout-fixed
+    name: Globex Checkout Fixed Window Limit
+    version: 1
+    tenant: globex
+    scope: route
+    algorithm: fixed_window
+    limit: 20
+    window: 5s
+    burst: 20
+    priority: 70
+    enabled: true
+    match:
+      route_pattern: "/api/v1/checkout/*"
+  - id: pol-globex-export-leaky
+    name: Globex Data Export Leaky Bucket
+    version: 1
+    tenant: globex
+    scope: client
+    algorithm: leaky_bucket
+    limit: 10
+    window: 5s
+    burst: 10
+    priority: 80
+    enabled: true
+    match:
+      route_pattern: "/api/v1/export/*"
+  - id: pol-global-audit-log
+    name: Global High-Precision Sliding Log Limit
+    version: 1
+    tenant: global
+    scope: client
+    algorithm: sliding_window_log
+    limit: 15
+    window: 3s
+    burst: 15
+    priority: 90
+    enabled: true
+    match:
+      route_pattern: "/api/v1/audit/*"

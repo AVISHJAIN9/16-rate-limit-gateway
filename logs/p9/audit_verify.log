@@ -1,0 +1,5 @@
+npx tsx scripts/audit-verify.mjs
+=== RLGW Audit Chain Verifier ===
+Verified 3 audit records.
+Chain Integrity: VALID (100% untampered)
+=== Audit Verification Successful ===

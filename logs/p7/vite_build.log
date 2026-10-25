@@ -1,0 +1,52 @@
+vite v5.4.21 building for production...
+transforming...
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/config.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/loader.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:crypto" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/loader.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/filestore.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:path" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/filestore.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:fs" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/bundle.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+[plugin:vite:resolve] [plugin vite:resolve] Module "node:path" has been externalized for browser compatibility, imported by "/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/packages/core/src/policy/bundle.ts". See https://vite.dev/guide/troubleshooting.html#module-externalized-for-browser-compatibility for more details.
+node_modules/zod/v4/core/regexes.js (74:0): A comment
+
+"/** Anchors a pattern source. The interpolation lives here rather than at the call site because
+ * esbuild will not drop a `@__PURE__` call whose own argument interpolates a variable, but it
+ * will drop `anchor(dateSource)`. Keeping it inline pinned `date` into every bundle. */"
+
+in "node_modules/zod/v4/core/regexes.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+node_modules/zod/v4/core/util.js (400:0): A comment
+
+"// Wrapped in a `@__PURE__` IIFE: esbuild never tree-shakes a top-level initializer that contains a member access on `Number`, so the bare object literal survived into every bundle."
+
+in "node_modules/zod/v4/core/util.js" contains an annotation that Rollup cannot interpret due to the position of the comment. The comment will be removed to avoid issues.
+packages/core/src/policy/filestore.ts (41:12): "existsSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (42:9): "mkdirSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (54:30): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (55:11): "existsSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (57:23): "readFileSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (74:25): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (75:11): "existsSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (76:25): "readFileSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (94:15): "truncateSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (136:25): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (137:20): "openSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (145:7): "writeSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (147:9): "fsyncSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (218:30): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (219:25): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (227:7): "writeFileSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (228:7): "renameSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/filestore.ts (233:9): "closeSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/filestore.ts".
+packages/core/src/policy/bundle.ts (25:23): "resolve" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+packages/core/src/policy/bundle.ts (31:10): "existsSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+packages/core/src/policy/bundle.ts (35:8): "readFileSync" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+packages/core/src/policy/bundle.ts (54:22): "dirname" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+packages/core/src/policy/bundle.ts (56:24): "isAbsolute" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+packages/core/src/policy/bundle.ts (56:51): "join" is not exported by "__vite-browser-external", imported by "packages/core/src/policy/bundle.ts".
+✓ 255 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                   0.56 kB │ gzip:   0.36 kB
+dist/assets/index-Omomb30l.css    3.32 kB │ gzip:   1.20 kB
+dist/assets/index-C2BXMR1Q.js   373.24 kB │ gzip: 114.02 kB
+✓ built in 1.28s

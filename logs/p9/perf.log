@@ -1,0 +1,8 @@
+npx tsx scripts/perf.mjs
+=== RLGW Performance Suite (SCALE=smoke, operations=50000) ===
+Operations:  50000
+Total time:  37.14 ms
+Throughput:  1,346,262 ops/sec
+Latencies:   p50 = 0.46 µs, p90 = 0.92 µs, p99 = 2.00 µs
+KPI Status:  PASS (p99 <= 100 µs)
+=== Performance Test Completed ===

@@ -1,0 +1,10 @@
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/security-suite.test.ts (13 tests) 14ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  00:54:35
+   Duration  789ms (transform 244ms, setup 0ms, collect 396ms, tests 14ms, environment 0ms, prepare 100ms)
+

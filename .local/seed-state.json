@@ -1,0 +1,40 @@
+{
+  "overrides": [
+    {
+      "key": "client:vip_acme_corp",
+      "multiplier": 3,
+      "ttlSeconds": 3600,
+      "reason": "VIP holiday migration"
+    }
+  ],
+  "allowlist": [
+    {
+      "type": "ip",
+      "value": "127.0.0.1",
+      "reason": "Internal loopback monitor"
+    },
+    {
+      "type": "client",
+      "value": "crawler-partner-trusted",
+      "reason": "Partner indexing bot"
+    }
+  ],
+  "denylist": [
+    {
+      "type": "ip",
+      "value": "198.51.100.42",
+      "reason": "DDoS mitigation incident #4102"
+    }
+  ],
+  "pendingApprovals": [
+    {
+      "id": "apr-101",
+      "policyId": "pol-acme-users-gcra",
+      "requestedBy": "ops_user",
+      "changes": {
+        "capacity": 100
+      },
+      "status": "pending"
+    }
+  ]
+}

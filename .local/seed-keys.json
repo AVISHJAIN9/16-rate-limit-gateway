@@ -1,0 +1,10 @@
+{
+  "acme": [
+    "ak_acme_live_52e7410a3237b9913243cf7af0ce4999",
+    "ak_acme_test_c151097570c9df30e36b3b98ca1efdfe"
+  ],
+  "globex": [
+    "ak_globex_live_bb57089929be0c7833e17434dba8ccf8",
+    "ak_globex_test_1a4bdd70b759421009b2996977d7b0ca"
+  ]
+}

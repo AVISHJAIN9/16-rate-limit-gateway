@@ -1,0 +1,26 @@
+groups:
+  - name: rlgw_alerts
+    rules:
+      - alert: HighRejectionRate
+        expr: sum(rate(rlgw_decisions_total{decision="denied"}[5m])) / sum(rate(rlgw_decisions_total[5m])) > 0.5
+        for: 2m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Rate limit reject ratio exceeded 50%"
+
+      - alert: CircuitBreakerOpen
+        expr: rlgw_circuit_breaker_state == 2
+        for: 30s
+        labels:
+          severity: critical
+        annotations:
+          summary: "Upstream circuit breaker tripped open for {{ $labels.upstream_id }}"
+
+      - alert: MetricCardinalityExceeded
+        expr: rlgw_metrics_series_dropped_total > 0
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Metric series budget exhausted; cardinality grouping active"

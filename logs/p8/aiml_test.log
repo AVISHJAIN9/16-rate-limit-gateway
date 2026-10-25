@@ -1,0 +1,10 @@
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/aiml-suite.test.ts (7 tests) 10ms
+
+ Test Files  1 passed (1)
+      Tests  7 passed (7)
+   Start at  01:39:32
+   Duration  816ms (transform 231ms, setup 0ms, collect 361ms, tests 10ms, environment 0ms, prepare 85ms)
+

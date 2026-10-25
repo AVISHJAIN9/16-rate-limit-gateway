@@ -1,0 +1,83 @@
+
+> 16-rate-limit-gateway@0.1.0 test
+> vitest run
+
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/batch-04-scopes.test.ts (6 tests) 79ms
+ ✓ tests/identity-pipeline.test.ts (5 tests) 15ms
+ ✓ tests/policy-engine.test.ts (10 tests) 113ms
+ ✓ tests/security-suite.test.ts (13 tests) 55ms
+ ✓ tests/control-plane-suite.test.ts (7 tests) 591ms
+   ✓ P5: Admin, Config & Control Plane Suite (F106–F120 + X2) > F106 & F107: PolicyFileWatcher debounces reloads and tracks generation 340ms
+stderr | tests/redis-store-completion.test.ts > P2: Redis Store Completion (F31–F45) > F44: Standalone fallback mode (degrade_local) under simulated Redis outage
+[ioredis] Unhandled error event: Error: read ECONNRESET
+    at TCP.onStreamRead (node:internal/stream_base_commons:216:20)
+
+stderr | tests/redis-store-completion.test.ts > P2: Redis Store Completion (F31–F45) > F44: Standalone fallback mode (degrade_local) under simulated Redis outage
+[ioredis] Unhandled error event: Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:967:11)
+    at Socket._write (node:net:979:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Socket.Writable.write (node:internal/streams/writable:510:10)
+    at EventEmitter.sendCommand (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/Redis.js:417:29)
+    at EventEmitter.client (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/utils/Commander.js:90:25)
+    at /Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/redis/event_handler.js:65:22
+
+stderr | tests/redis-store-completion.test.ts > P2: Redis Store Completion (F31–F45) > F44: Standalone fallback mode (degrade_local) under simulated Redis outage
+[ioredis] Unhandled error event: Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:967:11)
+    at Socket._write (node:net:979:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Socket.Writable.write (node:internal/streams/writable:510:10)
+    at EventEmitter.sendCommand (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/Redis.js:417:29)
+    at EventEmitter.client (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/utils/Commander.js:90:25)
+    at /Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/redis/event_handler.js:65:22
+
+ ✓ tests/p1-gateway-e2e.test.ts (13 tests) 2120ms
+   ✓ P1: HTTP Gateway & Backend E2E Tests (F61-F75) > F70, F71: Upstream timeouts and circuit breaker transitions > maps upstream timeouts to 504 Gateway Timeout 1482ms
+stderr | tests/redis-store-completion.test.ts > P2: Redis Store Completion (F31–F45) > F44: Standalone fallback mode (degrade_local) under simulated Redis outage
+[ioredis] Unhandled error event: Error: write EPIPE
+    at afterWriteDispatched (node:internal/stream_base_commons:159:15)
+    at writeGeneric (node:internal/stream_base_commons:150:3)
+    at Socket._writeGeneric (node:net:967:11)
+    at Socket._write (node:net:979:8)
+    at writeOrBuffer (node:internal/streams/writable:572:12)
+    at _write (node:internal/streams/writable:501:10)
+    at Socket.Writable.write (node:internal/streams/writable:510:10)
+    at EventEmitter.sendCommand (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/Redis.js:417:29)
+    at EventEmitter.client (/Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/utils/Commander.js:90:25)
+    at /Users/avishjain/avishjain9-repos/16-rate-limit-gateway/node_modules/ioredis/built/redis/event_handler.js:65:22
+
+ ✓ tests/redis-store-completion.test.ts (11 tests) 2080ms
+   ✓ P2: Redis Store Completion (F31–F45) > F35: Micro-batching of concurrent peeks via PipelineBatcher 598ms
+   ✓ P2: Redis Store Completion (F31–F45) > F44: Standalone fallback mode (degrade_local) under simulated Redis outage 773ms
+ ✓ tests/batch-06-redis-hardening.test.ts (9 tests) 44ms
+ ✓ tests/batch-02-algorithms.test.ts (7 tests) 31ms
+ ✓ tests/aiml-suite.test.ts (7 tests) 86ms
+ ✓ tests/batch-03-windowing.test.ts (9 tests) 180ms
+{"level":"error","ts":1792806343190,"pid":97990,"hostname":"avishs-MacBook-Air.local","msg":"Database connection failed","msg":"Database connection failed"}
+ ✓ tests/observability-suite.test.ts (7 tests) 31ms
+ ✓ tests/resilience-suite.test.ts (9 tests) 118ms
+ ✓ tests/p0-core-services.test.ts (12 tests) 78ms
+ ✓ tests/smoke.test.ts (2 tests) 4ms
+ ✓ tests/resilience.spec.ts (1 test) 138ms
+ ✓ tests/web-console.test.ts (5 tests) 5ms
+ ✓ tests/p0-property-algorithms.test.ts (11 tests) 5539ms
+   ✓ P0: Core Rate Limiting Algorithm Invariants & Parity > Invariant 1 & 5: Never negative remaining and cost > burst rejected immediately > GCRA: never returns negative remaining 1397ms
+   ✓ P0: Core Rate Limiting Algorithm Invariants & Parity > Gate P0 Parity: Oracle vs Implementation Parity (>= 10,000 steps) > TokenBucket: MemoryLimiterStore parity with Oracle over 10,000 random operations 2201ms
+   ✓ P0: Core Rate Limiting Algorithm Invariants & Parity > Gate P0 Parity: Oracle vs Implementation Parity (>= 10,000 steps) > FixedWindow: MemoryLimiterStore parity with Oracle over 10,000 random operations 812ms
+   ✓ P0: Core Rate Limiting Algorithm Invariants & Parity > Gate P0 Parity: Oracle vs Implementation Parity (>= 10,000 steps) > GCRA: MemoryLimiterStore parity with Oracle over 10,000 random operations 343ms
+
+ Test Files  18 passed (18)
+      Tests  144 passed (144)
+   Start at  07:15:37
+   Duration  7.08s (transform 3.75s, setup 0ms, collect 15.91s, tests 11.31s, environment 353ms, prepare 5.11s)
+

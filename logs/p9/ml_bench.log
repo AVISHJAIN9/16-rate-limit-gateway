@@ -1,0 +1,7 @@
+npx tsx scripts/ml-bench.mjs
+=== RLGW ML vs Heuristic Benchmark ===
+Evaluated 60 samples.
+Heuristic Detection: Precision=100.0%, Recall=0.0%, F1=0.0%, Latency=2.33µs
+Isolation Forest:     Precision=100.0%, Recall=100.0%, F1=100.0%, Latency=12.3µs
+Recommendation:       enable_ml_by_default
+=== ML Benchmark Completed ===

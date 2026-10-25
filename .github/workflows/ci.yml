@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  backend-gate:
+    name: Go Verification Gate (vet, fmt, race)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Go toolchain
+        uses: actions/setup-go@v5
+        with:
+          go-version: '1.22'
+          check-latest: true
+
+      - name: Verify Code Formatting
+        run: |
+          test -z "$(gofmt -l cmd internal)" || (echo "Unformatted files found:" && gofmt -l cmd internal && exit 1)
+
+      - name: Go Vet
+        run: go vet ./cmd/... ./internal/...
+
+      - name: Run Tests with Race Detector
+        run: go test -v -race -count=1 ./cmd/... ./internal/...
+
+      - name: Build Gateway Binary
+        run: go build -v -o bin/gateway ./cmd/gateway

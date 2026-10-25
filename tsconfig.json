@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "strict": true,
+    "noImplicitAny": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "types": ["node", "vitest/globals"],
+    "baseUrl": ".",
+    "paths": {
+      "@rlgw/core": ["packages/core/src/index.ts"],
+      "@rlgw/core/*": ["packages/core/src/*"],
+      "@rlgw/oracle": ["packages/oracle/src/index.ts"],
+      "@rlgw/oracle/*": ["packages/oracle/src/*"],
+      "@rlgw/store-memory": ["packages/store-memory/src/index.ts"],
+      "@rlgw/store-memory/*": ["packages/store-memory/src/*"],
+      "@rlgw/store-redis": ["packages/store-redis/src/index.ts"],
+      "@rlgw/store-redis/*": ["packages/store-redis/src/*"],
+      "@rlgw/obs": ["packages/obs/src/index.ts"],
+      "@rlgw/obs/*": ["packages/obs/src/*"],
+      "@rlgw/security": ["packages/security/src/index.ts"],
+      "@rlgw/security/*": ["packages/security/src/*"],
+      "@rlgw/control-plane": ["packages/control-plane/src/index.ts"],
+      "@rlgw/control-plane/*": ["packages/control-plane/src/*"],
+      "@rlgw/testutil": ["packages/testutil/src/index.ts"],
+      "@rlgw/testutil/*": ["packages/testutil/src/*"],
+      "@rlgw/aiml": ["packages/aiml/src/index.ts"],
+      "@rlgw/aiml/*": ["packages/aiml/src/*"]
+    },
+    "jsx": "react-jsx"
+  },
+  "include": ["tests/**/*.ts", "packages/**/*.ts", "apps/**/*.ts", "apps/**/*.tsx"],
+  "exclude": ["node_modules", "dist", "src"]
+}

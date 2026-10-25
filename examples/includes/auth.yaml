@@ -1,0 +1,37 @@
+version: 1
+
+policies:
+  - id: "pol-auth-login"
+    name: "Authentication Login Endpoint Rate Limit"
+    tenant: "acme"
+    scope: "ip"
+    algorithm: "fixed_window"
+    limit: 5
+    burst: 5
+    window: "1m"
+    priority: 100
+    enabled: true
+    match:
+      route_pattern: "/api/v1/auth/login"
+      methods: ["POST"]
+    cost_spec:
+      mode: "static"
+      static_cost: 1
+    on_reject:
+      status: 429
+      retry_after_mode: "seconds"
+    on_missing_identity: "deny"
+
+  - id: "pol-auth-refresh"
+    name: "Token Refresh Limit"
+    tenant: "acme"
+    scope: "client"
+    algorithm: "sliding_window_log"
+    limit: 20
+    burst: 20
+    window: "10m"
+    priority: 90
+    enabled: true
+    match:
+      route_pattern: "/api/v1/auth/refresh"
+      methods: ["POST"]

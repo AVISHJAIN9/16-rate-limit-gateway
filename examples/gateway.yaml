@@ -1,0 +1,66 @@
+version: "1.0"
+
+dataListener:
+  port: 8080
+  host: "0.0.0.0"
+  headersTimeout: 5000
+  requestTimeout: 15000
+  keepAliveTimeout: 60000
+  maxHeaderSize: 16384
+  maxRequestsPerSocket: 1000
+
+adminListener:
+  port: 8081
+  host: "0.0.0.0"
+  headersTimeout: 5000
+  requestTimeout: 10000
+  keepAliveTimeout: 30000
+
+upstreams:
+  - pathPrefix: "/api"
+    stripPrefix: ""
+    timeoutMs: 5000
+    targets:
+      - url: "http://127.0.0.1:9000"
+        weight: 1
+    circuitBreaker:
+      failureThresholdRatio: 0.5
+      minimumRequests: 10
+      openDurationMs: 10000
+      halfOpenProbes: 3
+
+store:
+  type: "memory"
+  redis:
+    url: "redis://127.0.0.1:6379"
+    cluster: false
+    connectTimeoutMs: 2000
+    commandTimeoutMs: 500
+  memory:
+    maxKeys: 100000
+    ttlMs: 3600000
+
+policySource:
+  type: "file"
+  filePath: "examples/policies.yaml"
+  watch: true
+
+failMode: "fail_open"
+
+trust:
+  trustedProxies:
+    - "127.0.0.1"
+    - "::1"
+    - "10.0.0.0/8"
+  trustForwardedHeaders: true
+  clientIpHeader: "X-Forwarded-For"
+
+adminAuth:
+  type: "static_token"
+  staticToken: "adm-secret-token-test-1234"
+
+observability:
+  metricsPort: 9091
+  logLevel: "info"
+  decisionLogBufferCapacity: 10000
+  sampleRate: 1.0

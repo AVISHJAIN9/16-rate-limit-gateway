@@ -1,0 +1,12 @@
+{
+  "name": "@rlgw/security",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@rlgw/core": "*",
+    "jose": "^6.2.13",
+    "pino": "^10.4.0"
+  }
+}

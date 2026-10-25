@@ -1,0 +1,10 @@
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/resilience-suite.test.ts (9 tests) 82ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  01:02:33
+   Duration  806ms (transform 228ms, setup 0ms, collect 331ms, tests 82ms, environment 0ms, prepare 107ms)
+

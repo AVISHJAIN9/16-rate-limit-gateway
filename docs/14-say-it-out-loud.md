@@ -1,0 +1,7 @@
+# Say It Out Loud: Spoken Scripts
+
+## Feature 1: Multi-Algorithm Engine
+> "I implemented five distinct rate limiting algorithms to allow fine-tuned protection across different API endpoints. For burst-tolerant endpoints like login submissions, we use Token Bucket, which allows momentary bursts up to capacity while enforcing a strict steady-state refill rate. For expensive database reports, we use Leaky Bucket to smooth traffic into a continuous, uniform stream. For standard REST APIs, we default to Sliding Window Counter: it weights request counts from the previous and current window, eliminating the classic double-burst vulnerability of fixed windows while using constant O(1) memory."
+
+## Feature 2: Atomic Redis Lua Scripts
+> "To prevent race conditions in a distributed cluster, I executed all rate-limit evaluations via atomic Lua scripts directly on the Redis server. Without Lua, checking a client's quota and then decrementing it requires multiple round-trips; under high concurrency, fifty requests can all read 'count=99' and pass through before any write occurs. Our Lua script evaluates the token balance, calculates replenishment based on elapsed time, deducts the token cost, and sets the TTL atomically in a single network hop. Furthermore, I built a circuit breaker on the Redis client: if Redis becomes unreachable, the gateway degrades to an in-memory fallback within 50 milliseconds, ensuring zero service disruption."

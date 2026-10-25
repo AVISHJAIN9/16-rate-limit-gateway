@@ -1,0 +1,15 @@
+npm run bench
+
+> 16-rate-limit-gateway@0.1.0 bench
+> npx tsx scripts/bench.mjs
+
+--- RLGW In-Memory Decision Latency Benchmark ---
+OS: Darwin 25.5.0 (arm64)
+CPUs: Apple M2 (8 cores)
+Node: v22.23.2
+Operations: 50000
+Latency p50:  0.42 µs
+Latency p90:  0.54 µs
+Latency p99:  1.75 µs
+Latency p99.9: 5.46 µs
+KPI p99 <= 100 µs: PASS

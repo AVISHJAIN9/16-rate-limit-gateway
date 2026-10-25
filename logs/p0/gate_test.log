@@ -1,0 +1,21 @@
+
+> 16-rate-limit-gateway@0.1.0 test
+> vitest run
+
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/smoke.test.ts (2 tests) 5ms
+ ✓ tests/batch-02-algorithms.test.ts (7 tests) 8ms
+ ✓ tests/batch-03-windowing.test.ts (9 tests) 51ms
+ ✓ tests/batch-04-scopes.test.ts (6 tests) 142ms
+ ✓ tests/batch-06-redis-hardening.test.ts (9 tests) 51ms
+ ✓ tests/p0-core-services.test.ts (12 tests) 54ms
+ ✓ tests/resilience.spec.ts (1 test) 148ms
+ ✓ tests/p0-property-algorithms.test.ts (11 tests) 874ms
+
+ Test Files  8 passed (8)
+      Tests  57 passed (57)
+   Start at  23:57:05
+   Duration  2.30s (transform 1.05s, setup 0ms, collect 2.75s, tests 1.33s, environment 4ms, prepare 1.68s)
+

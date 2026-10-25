@@ -1,0 +1,15 @@
+
+> 16-rate-limit-gateway@0.1.0 test:p1
+> vitest run tests/p1-gateway-e2e.test.ts
+
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/p1-gateway-e2e.test.ts (13 tests) 587ms
+   ✓ P1: HTTP Gateway & Backend E2E Tests (F61-F75) > F70, F71: Upstream timeouts and circuit breaker transitions > maps upstream timeouts to 504 Gateway Timeout 510ms
+
+ Test Files  1 passed (1)
+      Tests  13 passed (13)
+   Start at  00:08:24
+   Duration  1.38s (transform 138ms, setup 0ms, collect 345ms, tests 587ms, environment 0ms, prepare 103ms)
+

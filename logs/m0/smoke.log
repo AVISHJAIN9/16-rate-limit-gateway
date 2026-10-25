@@ -1,0 +1,16 @@
+
+> 16-rate-limit-gateway@0.1.0 smoke
+> vitest run tests/p1-gateway-e2e.test.ts tests/smoke.test.ts
+
+
+ RUN  v2.1.9 /Users/avishjain/avishjain9-repos/16-rate-limit-gateway
+
+ ✓ tests/smoke.test.ts (2 tests) 5ms
+ ✓ tests/p1-gateway-e2e.test.ts (13 tests) 595ms
+   ✓ P1: HTTP Gateway & Backend E2E Tests (F61-F75) > F70, F71: Upstream timeouts and circuit breaker transitions > maps upstream timeouts to 504 Gateway Timeout 511ms
+
+ Test Files  2 passed (2)
+      Tests  15 passed (15)
+   Start at  00:40:43
+   Duration  1.52s (transform 233ms, setup 0ms, collect 541ms, tests 599ms, environment 1ms, prepare 205ms)
+

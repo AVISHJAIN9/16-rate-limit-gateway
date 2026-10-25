@@ -1,0 +1,26 @@
+{
+  "title": "Rate-Limit Gateway (RLGW) Overview",
+  "panels": [
+    {
+      "title": "Throughput & Decisions",
+      "type": "timeseries",
+      "targets": [
+        { "expr": "sum(rate(rlgw_decisions_total[1m])) by (decision)", "legendFormat": "{{decision}}" }
+      ]
+    },
+    {
+      "title": "Decision Latency (p99)",
+      "type": "gauge",
+      "targets": [
+        { "expr": "histogram_quantile(0.99, sum(rate(rlgw_decision_duration_seconds_bucket[5m])) by (le))", "legendFormat": "p99 latency" }
+      ]
+    },
+    {
+      "title": "Circuit Breaker State",
+      "type": "stat",
+      "targets": [
+        { "expr": "rlgw_circuit_breaker_state", "legendFormat": "{{upstream_id}}" }
+      ]
+    }
+  ]
+}
