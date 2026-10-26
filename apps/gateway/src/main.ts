@@ -22,6 +22,9 @@ async function main(): Promise<void> {
 
   console.log(`[rlgw] Loading configuration from ${resolvedPath}`);
   const config = GatewayConfigValidator.loadFromFile(resolvedPath);
+  if (process.env.PORT) {
+    config.dataListener.port = parseInt(process.env.PORT, 10);
+  }
 
   const server = new GatewayServer(config);
   const { dataPort, adminPort } = await server.start();

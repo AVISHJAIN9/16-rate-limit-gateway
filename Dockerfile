@@ -10,4 +10,4 @@ RUN npx vite build apps/web
 
 EXPOSE 8000 9000
 
-CMD ["node", "apps/gateway/src/main.ts"]
+CMD ["npx", "tsx", "apps/gateway/src/main.ts"]

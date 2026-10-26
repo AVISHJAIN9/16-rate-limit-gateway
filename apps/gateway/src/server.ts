@@ -79,7 +79,7 @@ export class GatewayServer {
 
     const requestHandler = (req: http.IncomingMessage | http2.Http2ServerRequest, res: http.ServerResponse | http2.Http2ServerResponse): void => {
       // Health and Readiness probes on data listener
-      if (req.url === '/healthz' || req.url === '/readyz') {
+      if (req.url === '/health' || req.url === '/healthz' || req.url === '/readyz') {
         if (this.isDrainingState) {
           res.statusCode = 503;
           res.setHeader('Content-Type', 'application/json');
