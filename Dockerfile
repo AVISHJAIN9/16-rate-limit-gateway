@@ -5,8 +5,7 @@ COPY package*.json ./
 RUN npm install
 
 COPY . .
-RUN npm run typecheck
-RUN npx vite build apps/web
+RUN npm run build
 
 EXPOSE 8000 9000
 
