@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as o,a2 as c}from"./chunks/framework.dMg474VA.js";const u=JSON.parse('{"title":"RLGW API Reference","description":"","frontmatter":{},"headers":[],"relativePath":"api.md","filePath":"api.md"}'),a={name:"api.md"};function r(i,d,n,s,l,h){return t(),o("div",null,[...d[0]||(d[0]=[c("",10)])])}const m=e(a,[["render",r]]);export{u as __pageData,m as default};
